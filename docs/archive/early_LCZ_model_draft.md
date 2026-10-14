@@ -1,3 +1,5 @@
+> **Archived early draft.** This LCZ-based variable list predates the final model. The current method is in the main README and `docs/model_specification.md` (no LCZ classification is used).
+
 **Key Variables for LCZ-Based Heat Risk Index (HRI) Modeling**
 
 To construct a GIS-based urban heat risk model, this study integrates the **Local Climate Zone (LCZ) framework** with a **Heat Risk Index (HRI)** approach. Only the variables that directly influence urban heat exposure and human health risk are included.

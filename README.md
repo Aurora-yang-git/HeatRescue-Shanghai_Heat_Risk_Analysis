@@ -47,6 +47,15 @@ conda create -n hri python=3.12 geopandas rasterio rasterstats numpy pandas \
 conda activate hri
 ```
 
+Download the OpenStreetMap layers for Shanghai (not stored in this repo, ~250 MB unzipped):
+
+```bash
+curl -L -o shanghai-free.shp.zip https://download.geofabrik.de/asia/china/shanghai-latest-free.shp.zip
+unzip shanghai-free.shp.zip -d data/shanghai-260329-free.shp
+```
+
+The raster inputs (UTCI, nightlight, GDP) are downloaded automatically by `01_download_data.py`.
+
 ### Run
 
 ```bash

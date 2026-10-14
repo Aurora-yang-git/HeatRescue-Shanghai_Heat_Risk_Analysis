@@ -17,6 +17,8 @@ data/processed/*.aux.xml
 data/shanghai-260329-free.shp/*.shp
 data/shanghai-260329-free.shp/*.dbf
 data/shanghai-260329-free.shp/*.shx
+data/shanghai-260329-free.shp/*.cpg
+data/shanghai-260329-free.shp/*.prj
 
 # Large output files
 output/blocks/*.gpkg
