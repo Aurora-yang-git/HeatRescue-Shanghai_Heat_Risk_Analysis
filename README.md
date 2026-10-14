@@ -1,6 +1,10 @@
-# Shanghai Heat Risk Analysis (HRI)
+# HeatRescue: Shanghai Heat Risk Analysis
 
 Automated GIS pipeline for neighbourhood-scale heat-risk assessment and heat-shelter supply-demand mismatch analysis in Shanghai, using the **HRI + Shelter** framework.
+
+![Outdoor and indoor heat-shelter priority maps with the top-10 blocks annotated](output/maps/map_priority_composite.png)
+
+![Five-panel overview of heat risk versus cooling-shelter supply](output/maps/map_dashboard.png)
 
 ## What this project does
 
@@ -29,6 +33,7 @@ The pipeline outputs two actionable priority maps:
 | 7 | `07_priority_index.py` | Calculate OHSPI, IHSPI, and apply 7-class Jenks classification |
 | 8 | `08_visualize.py` | Generate 5 thematic maps (300 dpi PNG) |
 | 9 | `09_generate_qgis_project.py` | Generate `.qgz` project file with all layers pre-styled |
+| 10 | `10_infographic.py` | Process infographics: HRI component maps and shelter maps (run separately, not part of `run_all.py`) |
 
 ## Quick start
 
@@ -59,7 +64,7 @@ The raster inputs (UTCI, nightlight, GDP) are downloaded automatically by `01_do
 ### Run
 
 ```bash
-cd "QGIS Oxford"
+cd HeatRescue-Shanghai_Heat_Risk_Analysis
 python scripts/run_all.py
 ```
 
@@ -139,7 +144,7 @@ output/
 ## Project structure
 
 ```
-QGIS Oxford/
+HeatRescue-Shanghai_Heat_Risk_Analysis/
   scripts/           # 10 pipeline scripts + config + runner
   data/
     shanghai-260329-free.shp/   # OSM vector data
