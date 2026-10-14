@@ -23,7 +23,7 @@ Instead of producing a generic "hot-zone" map, this pipeline identifies **where 
 Priority = Heat Risk Index (HRI)  −  Shelter Provision Index
 ```
 
-The pipeline outputs two actionable priority maps:
+The pipeline outputs two priority maps for exploratory planning:
 
 - **OHSPI** (Outdoor Heat Shelter Priority) — blocks that are hot + lack green space
 - **IHSPI** (Indoor Heat Shelter Priority) — blocks that are hot + lack air-conditioned public facilities
@@ -100,9 +100,11 @@ Double-click `output/shanghai_heat_risk.qgz` to open the pre-configured QGIS pro
 |-----------|--------|---------------|
 | **Hazard** | UTCI August 2022 (GloUTCI-M, ~1km) | Positive [0.1, 0.9] |
 | **Exposure** | Population density (OSM buildings proxy) | Positive |
-| **Vulnerability** | Mean of: Nightlight (negative), GDP (negative), Population density (positive) | Mixed |
+| **Vulnerability** | Mean of Nightlight (negative) and GDP (negative); population density is excluded to avoid double-counting with Exposure | Negative |
 
 ### Shelter indices
+
+Indoor shelters are proxied by POIs that are usually air-conditioned and publicly accessible; they are potential cooling resources, not verified cooling centres.
 
 | Index | Formula |
 |-------|---------|
@@ -111,7 +113,7 @@ Double-click `output/shanghai_heat_risk.qgz` to open the pre-configured QGIS pro
 | **OHSPI** | HRI_norm - OHSI |
 | **IHSPI** | HRI_norm - IHSI |
 
-POI categories and operational time weights:
+POI categories and operational time weights. Weights are the fraction of a day each category is typically open (assumed opening hours, see `docs/model_specification.md`):
 
 | Category | Examples | Weight (fraction of 24h open) |
 |----------|----------|-------------------------------|
